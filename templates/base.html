@@ -1,0 +1,23 @@
+{% load static %}
+<html>
+    <head>
+        <title> Daily Crossword Visualizer</title>
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <link href = "https://fonts.googleapis.com/ css?family=Source+Sans+Pro:400" rel = "stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class='nav-left'>
+                <h1><a href="{% url 'home' %}">Daily Crossword Visualizer</a></h1>
+            </div>
+            <ul class='nav-right'>
+                <li><a href="{% url 'updateform' %}">+ New Crossword</a></li>
+                <li><a href="{% url 'leaderboard' %}">Leaderboard</a></li>
+            </ul>
+        </header>
+        <div>
+            {% block content %} <!--extended by home.html-->
+            {% endblock content %}
+        </div>
+    </body>
+</html>

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for dailydata in object_list %}
+        <div class="daily-entry">
+            <h2><a href={{dailydata.link}}>{{ dailydata.date.date }} </a></h2>
+            <p> Time: {{ dailydata.duration }} <a href="{% url 'dailyparticipants' dailydata.pk %}">Scores</a></p> 
+        </div>
+    {% endfor %}
+{% endblock content %}
